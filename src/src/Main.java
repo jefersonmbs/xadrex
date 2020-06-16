@@ -1,11 +1,9 @@
 import tabuleiro.Posicao;
+import tabuleiro.Tabuleiro;
 
 public class Main {
     public static void main(String[] args) {
-        Posicao posicao = new Posicao(10,20);
-
-
-        System.out.println(posicao);
+        Tabuleiro tabuleiro = new Tabuleiro(9,9);
 
     }
 }
