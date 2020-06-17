@@ -37,34 +37,47 @@ public class Partida {
     private void posicoesIniciais(){
 
         /*Torres*/
-        tabuleiro.colocarPeca(new Torre(tabuleiro,Cor.PRETO),new Posicao(0,0));
-        tabuleiro.colocarPeca(new Torre(tabuleiro,Cor.PRETO),new Posicao(0,7));
-        tabuleiro.colocarPeca(new Torre(tabuleiro,Cor.BRANCO),new Posicao(7,0));
-        tabuleiro.colocarPeca(new Torre(tabuleiro,Cor.BRANCO),new Posicao(7,7));
+        colocarNovaPeca('a', 8,new Torre(tabuleiro,Cor.PRETO));
+        colocarNovaPeca('h', 8,new Torre(tabuleiro,Cor.PRETO));
+        colocarNovaPeca('a', 1,new Torre(tabuleiro,Cor.BRANCO));
+        colocarNovaPeca('h', 1,new Torre(tabuleiro,Cor.BRANCO));
 
         /*Cavalo*/
-        tabuleiro.colocarPeca(new Cavalo(tabuleiro,Cor.PRETO),new Posicao(0,1));
-        tabuleiro.colocarPeca(new Cavalo(tabuleiro,Cor.PRETO),new Posicao(0,6));
-        tabuleiro.colocarPeca(new Cavalo(tabuleiro,Cor.BRANCO),new Posicao(7,1));
-        tabuleiro.colocarPeca(new Cavalo(tabuleiro,Cor.BRANCO),new Posicao(7,6));
+        colocarNovaPeca('b', 8, new Cavalo(tabuleiro,Cor.PRETO));
+        colocarNovaPeca('g', 8, new Cavalo(tabuleiro,Cor.PRETO));
+        colocarNovaPeca('b', 1, new Cavalo(tabuleiro,Cor.BRANCO));
+        colocarNovaPeca('g', 1, new Cavalo(tabuleiro,Cor.BRANCO));
+
 
         /*Bispo*/
-        tabuleiro.colocarPeca(new Bispo(tabuleiro,Cor.PRETO),new Posicao(0,2));
-        tabuleiro.colocarPeca(new Bispo(tabuleiro,Cor.PRETO),new Posicao(0,5));
-        tabuleiro.colocarPeca(new Bispo(tabuleiro,Cor.BRANCO),new Posicao(7,2));
-        tabuleiro.colocarPeca(new Bispo(tabuleiro,Cor.BRANCO),new Posicao(7,5));
+        colocarNovaPeca('c',8, new Bispo(tabuleiro,Cor.PRETO));
+        colocarNovaPeca('f',8, new Bispo(tabuleiro,Cor.PRETO));
+        colocarNovaPeca('c',1, new Bispo(tabuleiro,Cor.PRETO));
+        colocarNovaPeca('f',1, new Bispo(tabuleiro,Cor.PRETO));
+
 
         /*Dama*/
-        tabuleiro.colocarPeca(new Dama(tabuleiro,Cor.PRETO), new Posicao(0,3));
-        tabuleiro.colocarPeca(new Dama(tabuleiro,Cor.BRANCO), new Posicao(7,3));
+        colocarNovaPeca('d', 8 , new Dama(tabuleiro,Cor.PRETO));
+        colocarNovaPeca('d', 1 , new Dama(tabuleiro,Cor.BRANCO));
+
 
         /*Rei*/
-        tabuleiro.colocarPeca(new Rei(tabuleiro,Cor.PRETO),new Posicao(0,4));
-        tabuleiro.colocarPeca(new Rei(tabuleiro,Cor.BRANCO),new Posicao(7,4));
+        colocarNovaPeca('e', 8, new Rei(tabuleiro,Cor.PRETO));
+        colocarNovaPeca('e', 1 ,new Rei(tabuleiro,Cor.BRANCO));
 
-        for(int i = 0; i < tabuleiro.getLinhas(); i++){
-            tabuleiro.colocarPeca(new Peao(tabuleiro,Cor.PRETO), new Posicao(1,i));
-            tabuleiro.colocarPeca(new Peao(tabuleiro,Cor.BRANCO), new Posicao(6,i));
+
+        for(int i = 0; i < tabuleiro.getColunas(); i++){
+            int letra = 'a';
+            letra = letra + i;
+            char c = (char)letra;
+            colocarNovaPeca( c,7, new Peao(tabuleiro,Cor.PRETO));
+            colocarNovaPeca( c,2, new Peao(tabuleiro,Cor.PRETO));
+
         }
     }
+
+    private void colocarNovaPeca(int coluna, int linha, PecaXadrez peca){
+        tabuleiro.colocarPeca(peca, new PosicaoXadrez((char) coluna,linha).toPosicao());
+    }
+
 }
