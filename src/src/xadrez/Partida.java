@@ -9,9 +9,12 @@ import tabuleiro.Tabuleiro;
 public class Partida {
 
     private Tabuleiro tabuleiro;
+    private static final int linhas = 8;
+    private static final int colunas = 8;
 
     public Partida(){
-        tabuleiro = new Tabuleiro(8,8);
+
+        tabuleiro = new Tabuleiro(linhas,colunas);
     }
     public PecaXadrez[][] getPecas(){
         PecaXadrez[][] mat = new PecaXadrez[tabuleiro.getLinhas()][tabuleiro.getColunas()];
