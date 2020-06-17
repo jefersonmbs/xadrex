@@ -12,6 +12,7 @@ public class Peao extends PecaXadrez {
     public Peao(Tabuleiro tabuleiro, Cor cor) {
         super(tabuleiro, cor);
     }
+    //Fazer os Tipos de Movimento da peça
 
     @Override
     public String toString(){

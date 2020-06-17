@@ -11,6 +11,8 @@ public class Rei extends PecaXadrez {
     public Rei(Tabuleiro tabuleiro, Cor cor) {
         super(tabuleiro, cor);
     }
+    //Fazer os Tipos de Movimento da peça
+
 
     @Override
     public String toString(){

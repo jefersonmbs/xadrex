@@ -66,7 +66,5 @@ public class Partida {
             tabuleiro.colocarPeca(new Peao(tabuleiro,Cor.PRETO), new Posicao(1,i));
             tabuleiro.colocarPeca(new Peao(tabuleiro,Cor.BRANCO), new Posicao(6,i));
         }
-
-
     }
 }
