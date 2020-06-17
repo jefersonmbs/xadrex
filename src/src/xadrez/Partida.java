@@ -19,6 +19,11 @@ public class Partida {
         tabuleiro = new Tabuleiro(linhas,colunas);
         posicoesIniciais();
     }
+
+    public Tabuleiro getTabuleiro() {
+        return tabuleiro;
+    }
+
     public PecaXadrez[][] getPecas(){
         PecaXadrez[][] mat = new PecaXadrez[tabuleiro.getLinhas()][tabuleiro.getColunas()];
         for(int i = 0; i < tabuleiro.getLinhas(); i++){

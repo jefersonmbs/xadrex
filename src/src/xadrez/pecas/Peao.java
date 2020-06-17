@@ -15,6 +15,6 @@ public class Peao extends PecaXadrez {
 
     @Override
     public String toString(){
-        return "P";
+        return "\u2659";
     }
 }

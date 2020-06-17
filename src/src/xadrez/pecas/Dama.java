@@ -15,6 +15,6 @@ public class Dama extends PecaXadrez {
 
     @Override
     public String toString(){
-        return "D";
+        return "\u2655";
     }
 }

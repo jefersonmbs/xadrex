@@ -14,6 +14,6 @@ public class Bispo extends PecaXadrez {
 
     @Override
     public String toString(){
-        return "B";
+        return "\u2657";
     }
 }
