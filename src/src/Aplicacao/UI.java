@@ -33,7 +33,6 @@ public class UI {
                     //Quadrado Branco Preto
                     System.out.print("\u25AD");
                 }
-
             }else if(i % 2 != 0){
                 if(j%2 == 0){
                     System.out.print("\u25AD");
@@ -41,7 +40,6 @@ public class UI {
                     System.out.print("\u25AC");
                 }
             }
-
         }else{
             System.out.print(peca);
         }
