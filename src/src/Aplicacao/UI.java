@@ -1,5 +1,6 @@
-package Aplicacao;/*
-    Ilog created on 16/06/2020 
+package Aplicacao;
+/*
+    Jeferson created on 16/06/2020
 */
 
 import xadrez.PecaXadrez;
