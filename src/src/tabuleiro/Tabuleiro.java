@@ -54,6 +54,20 @@ public class Tabuleiro {
         if(!existePosicao(posicao)){
             throw new TabuleiroExeption("Posição inexistente no tabuleiro. ");
         }
-        return peca(posicao) !=null;
+        return peca(posicao) != null;
+
     }
+    public Peca removerPeca(Posicao posicao){
+        if(!existePosicao(posicao)){
+            throw new TabuleiroExeption("Posição inexistente no tabuleiro. ");
+        }
+        if(peca(posicao) == null){
+            return null;
+        }
+        Peca pecaRemovida = peca(posicao);
+        pecaRemovida.posicao = null;
+        pecas[posicao.getLinha()][posicao.getColuna()] = null;
+        return pecaRemovida;
+    }
+
 }

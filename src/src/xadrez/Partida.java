@@ -4,6 +4,7 @@ package xadrez;
     Jeferson created on 16/06/2020
 */
 
+import tabuleiro.Peca;
 import tabuleiro.Posicao;
 import tabuleiro.Tabuleiro;
 import xadrez.pecas.*;
@@ -78,6 +79,28 @@ public class Partida {
 
     private void colocarNovaPeca(int coluna, int linha, PecaXadrez peca){
         tabuleiro.colocarPeca(peca, new PosicaoXadrez((char) coluna,linha).toPosicao());
+    }
+
+    public PecaXadrez moverPeca(PosicaoXadrez posicaoXadrezOrigen, PosicaoXadrez posicaoXadrezFutura){
+        Posicao origen = posicaoXadrezOrigen.toPosicao();
+        Posicao futura = posicaoXadrezFutura.toPosicao();
+        validarPosicaoDeOrigen(origen);
+        Peca capturaDePeca = fazerMovimento(origen, futura);
+
+        return (PecaXadrez) capturaDePeca;
+    }
+
+    private Peca fazerMovimento(Posicao origen, Posicao futura) {
+        Peca peca = tabuleiro.removerPeca(origen);
+        Peca pecaCapturada = tabuleiro.removerPeca(futura);
+        tabuleiro.colocarPeca(peca,futura);
+        return pecaCapturada;
+    }
+
+    private void validarPosicaoDeOrigen(Posicao origen) {
+        if(!tabuleiro.existePeca(origen)){
+            throw new XadrezException("Não existe uma peça nessa posição. ");
+        }
     }
 
 }

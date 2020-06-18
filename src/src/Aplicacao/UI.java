@@ -3,9 +3,14 @@ package Aplicacao;
     Jeferson created on 16/06/2020
 */
 
+import tabuleiro.Posicao;
 import tabuleiro.Tabuleiro;
 import xadrez.Cor;
 import xadrez.PecaXadrez;
+import xadrez.PosicaoXadrez;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class UI {
 
@@ -18,6 +23,17 @@ public class UI {
     public static final String ANSI_PURPLE = "\u001B[35m";
     public static final String ANSI_CYAN = "\u001B[36m";
     public static final String ANSI_WHITE = "\u001B[37m";
+
+
+
+    public static final String ANSI_BLACK_BACKGROUND = "\u001B[40m";
+    public static final String ANSI_RED_BACKGROUND = "\u001B[41m";
+    public static final String ANSI_GREEN_BACKGROUND = "\u001B[42m";
+    public static final String ANSI_YELLOW_BACKGROUND = "\u001B[43m";
+    public static final String ANSI_BLUE_BACKGROUND = "\u001B[44m";
+    public static final String ANSI_PURPLE_BACKGROUND = "\u001B[45m";
+    public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
+    public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
 
 
     public static void imprimirTabuleiro(PecaXadrez[][] pecas){
@@ -63,4 +79,14 @@ public class UI {
         }
         System.out.print(" ");
     }
+
+    public static PosicaoXadrez lerPosicao(Scanner sc){
+        //a1 a2 b1
+        String s = sc.nextLine();
+        //pegar a primeira posição que indida a coluna
+        char coluna = s.charAt(0);
+        int linha = Integer.parseInt(s.substring(1));
+        return new PosicaoXadrez(coluna,linha);
+    }
+
 }
