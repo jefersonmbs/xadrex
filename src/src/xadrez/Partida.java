@@ -52,8 +52,8 @@ public class Partida {
         /*Bispo*/
         colocarNovaPeca('c',8, new Bispo(tabuleiro,Cor.PRETO));
         colocarNovaPeca('f',8, new Bispo(tabuleiro,Cor.PRETO));
-        colocarNovaPeca('c',1, new Bispo(tabuleiro,Cor.PRETO));
-        colocarNovaPeca('f',1, new Bispo(tabuleiro,Cor.PRETO));
+        colocarNovaPeca('c',1, new Bispo(tabuleiro,Cor.BRANCO));
+        colocarNovaPeca('f',1, new Bispo(tabuleiro,Cor.BRANCO));
 
 
         /*Dama*/
@@ -71,7 +71,7 @@ public class Partida {
             letra = letra + i;
             char c = (char)letra;
             colocarNovaPeca( c,7, new Peao(tabuleiro,Cor.PRETO));
-            colocarNovaPeca( c,2, new Peao(tabuleiro,Cor.PRETO));
+            colocarNovaPeca( c,2, new Peao(tabuleiro,Cor.BRANCO));
 
         }
     }

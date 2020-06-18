@@ -4,11 +4,10 @@ package Aplicacao;
 */
 
 import tabuleiro.Tabuleiro;
+import xadrez.Cor;
 import xadrez.PecaXadrez;
 
 public class UI {
-
-    // https://stackoverflow.com/questions/5762491/how-to-print-color-in-console-using-system-out-println
 
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_BLACK = "\u001B[30m";
@@ -20,14 +19,6 @@ public class UI {
     public static final String ANSI_CYAN = "\u001B[36m";
     public static final String ANSI_WHITE = "\u001B[37m";
 
-    public static final String ANSI_BLACK_BACKGROUND = "\u001B[40m";
-    public static final String ANSI_RED_BACKGROUND = "\u001B[41m";
-    public static final String ANSI_GREEN_BACKGROUND = "\u001B[42m";
-    public static final String ANSI_YELLOW_BACKGROUND = "\u001B[43m";
-    public static final String ANSI_BLUE_BACKGROUND = "\u001B[44m";
-    public static final String ANSI_PURPLE_BACKGROUND = "\u001B[45m";
-    public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
-    public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
 
     public static void imprimirTabuleiro(PecaXadrez[][] pecas){
         for (int i = 0; i < pecas.length; i++){
@@ -43,15 +34,6 @@ public class UI {
         if(peca == null){
             //linha Impar inicio Preto
             //Linha Par inicio Branco
-/*
-            if (piece.getColor() == Color.WHITE) {
-            }	                System.out.print(ANSI_WHITE + piece + ANSI_RESET);
-            System.out.print(" ");	            }
-        else {
-            System.out.print(ANSI_YELLOW + piece + ANSI_RESET);
-        }
-            */
-
 
             //Verifica se a linha é par
             //TODO Melhorar essa logica
@@ -60,9 +42,10 @@ public class UI {
                     //Quadrado Petro Branco
                     System.out.print("\u25AC");
                 }else{
-                    //Quadrado Branco Preto
+
                     System.out.print("\u25AD");
                 }
+                //Quadrado Branco Preto
             }else if(i % 2 != 0){
                 if(j%2 == 0){
                     System.out.print("\u25AD");
@@ -71,7 +54,12 @@ public class UI {
                 }
             }
         }else{
-            System.out.print(peca);
+            if(peca.getCor() == Cor.BRANCO){
+                System.out.print(ANSI_BLACK + peca + ANSI_RESET);
+            }else{
+                System.out.print(ANSI_WHITE + peca + ANSI_RESET);
+            }
+
         }
         System.out.print(" ");
     }
