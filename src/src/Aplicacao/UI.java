@@ -74,9 +74,9 @@ public class UI {
             }
         }else{
             if(peca.getCor() == Cor.BRANCO){
-                System.out.print(ANSI_BLACK + peca + ANSI_RESET);
-            }else{
                 System.out.print(ANSI_WHITE + peca + ANSI_RESET);
+            }else{
+                System.out.print(ANSI_BLACK + peca + ANSI_RESET);
             }
 
         }
@@ -92,6 +92,7 @@ public class UI {
         }
         //pegar a primeira posição que indica a coluna
         char coluna = s.charAt(0);
+        //pegar Segunda posição que indica a linha
         int linha = Integer.parseInt(s.substring(1));
         return new PosicaoXadrez(coluna,linha);
     }
