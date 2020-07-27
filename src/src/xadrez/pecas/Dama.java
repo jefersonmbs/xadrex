@@ -17,4 +17,9 @@ public class Dama extends PecaXadrez {
     public String toString(){
         return "\u2655";
     }
+
+    @Override
+    public boolean[][] movimentosPosiveis() {
+        return new boolean[getTabuleiro().getLinhas()][getTabuleiro().getColunas()];
+    }
 }

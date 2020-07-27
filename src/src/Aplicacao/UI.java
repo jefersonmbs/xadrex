@@ -3,13 +3,12 @@ package Aplicacao;
     Jeferson created on 16/06/2020
 */
 
-import tabuleiro.Posicao;
-import tabuleiro.Tabuleiro;
 import xadrez.Cor;
 import xadrez.PecaXadrez;
 import xadrez.PosicaoXadrez;
+import xadrez.XadrezException;
 
-import java.util.InputMismatchException;
+
 import java.util.Scanner;
 
 public class UI {
@@ -35,6 +34,10 @@ public class UI {
     public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
     public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
 
+    public static void limparTela(){
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
 
     public static void imprimirTabuleiro(PecaXadrez[][] pecas){
         for (int i = 0; i < pecas.length; i++){
@@ -62,7 +65,7 @@ public class UI {
                     System.out.print("\u25AD");
                 }
                 //Quadrado Branco Preto
-            }else if(i % 2 != 0){
+            }else {
                 if(j%2 == 0){
                     System.out.print("\u25AD");
                 }else {
@@ -83,7 +86,11 @@ public class UI {
     public static PosicaoXadrez lerPosicao(Scanner sc){
         //a1 a2 b1
         String s = sc.nextLine();
-        //pegar a primeira posição que indida a coluna
+        //TODO validação do tamanho da String e da padrão dela.
+        if(s.length() != 2){
+            throw new XadrezException("Posição incorreta");
+        }
+        //pegar a primeira posição que indica a coluna
         char coluna = s.charAt(0);
         int linha = Integer.parseInt(s.substring(1));
         return new PosicaoXadrez(coluna,linha);

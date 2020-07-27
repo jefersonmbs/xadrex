@@ -18,4 +18,10 @@ public class Peao extends PecaXadrez {
     public String toString(){
         return "\u2659";
     }
+
+    @Override
+    public boolean[][] movimentosPosiveis() {
+        boolean[][] mat = new boolean[getTabuleiro().getLinhas()][getTabuleiro().getColunas()];
+        return mat;
+    }
 }

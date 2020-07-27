@@ -101,6 +101,9 @@ public class Partida {
         if(!tabuleiro.existePeca(origen)){
             throw new XadrezException("Não existe uma peça nessa posição. ");
         }
+        if(!tabuleiro.peca(origen).existeAlgumMovimentoPosivei()){
+            throw new XadrezException("Não existe um movimento para essa peça. ");
+        }
     }
 
 }

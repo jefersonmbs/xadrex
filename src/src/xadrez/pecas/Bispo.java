@@ -17,4 +17,9 @@ public class Bispo extends PecaXadrez {
     public String toString(){
         return "\u2657";
     }
+
+    @Override
+    public boolean[][] movimentosPosiveis() {
+        return new boolean[getTabuleiro().getLinhas()][getTabuleiro().getColunas()];
+    }
 }
