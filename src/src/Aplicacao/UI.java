@@ -40,6 +40,7 @@ public class UI {
             }
             System.out.println();
         }
+
         System.out.print(" A  B C  D  E F  G  H");
     }
     private static void imprimirPeca(PecaXadrez peca,int j,int i, boolean background){
