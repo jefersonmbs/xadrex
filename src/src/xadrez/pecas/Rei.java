@@ -22,7 +22,7 @@ public class Rei extends PecaXadrez {
 
     private boolean podeMover(Posicao posicao){
         PecaXadrez p = (PecaXadrez) getTabuleiro().peca(posicao);
-        return p != null && p.getCor() != getCor() ;
+        return p == null || p.getCor() != getCor() ;
     }
 
     @Override

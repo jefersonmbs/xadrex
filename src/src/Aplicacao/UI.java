@@ -44,6 +44,9 @@ public class UI {
         System.out.print(" A  B C  D  E F  G  H");
     }
     private static void imprimirPeca(PecaXadrez peca,int j,int i, boolean background){
+        if(background){
+            System.out.print(ANSI_BLUE_BACKGROUND );
+        }
         if(peca == null){
             //linha Impar inicio Preto
             //Linha Par inicio Branco
@@ -52,42 +55,30 @@ public class UI {
             //TODO Melhorar essa logica
             if(i % 2 == 0){
                 if(j%2 == 0){
-                    if(background)
-                        System.out.print("\u25AC"+ ANSI_BLUE_BACKGROUND+ ANSI_RESET);
-                    else
-                        System.out.print("\u25AC"+ ANSI_RESET);
-
+                    //Quadrado Petro Branco
+                    System.out.print("\u25AC"+ ANSI_RESET);
                 }else{
-                    if(background)
-                        System.out.println("\u25AD"+ANSI_BLUE_BACKGROUND+ ANSI_RESET);
-                    else
-                        System.out.print("\u25AD"+ ANSI_RESET);
+
+                    System.out.print("\u25AD"+ ANSI_RESET);
                 }
                 //Quadrado Branco Preto
             }else {
                 if(j%2 == 0){
-                    if(background)
-                        System.out.print("\u25AD"+ANSI_BLUE_BACKGROUND+ ANSI_RESET);
-                    else
-                        System.out.print("\u25AD"+ ANSI_RESET);
-
+                    System.out.print("\u25AD"+ ANSI_RESET);
                 }else {
-                    if(background)
-                        System.out.print("\u25AC"+ANSI_BLUE_BACKGROUND + ANSI_RESET );
-                    else
-                        System.out.print("\u25AC"+ ANSI_RESET);
-
+                    System.out.print("\u25AC"+ ANSI_RESET);
                 }
             }
         }else{
             if(peca.getCor() == Cor.BRANCO){
-                System.out.print(ANSI_WHITE + peca + ANSI_RESET );
+                System.out.print(ANSI_WHITE + peca + ANSI_RESET);
             }else{
                 System.out.print(ANSI_BLACK + peca + ANSI_RESET);
             }
 
         }
         System.out.print(" ");
+
     }
 
     public static PosicaoXadrez lerPosicao(Scanner sc){
