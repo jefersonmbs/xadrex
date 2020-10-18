@@ -63,7 +63,6 @@ public class Partida {
 
 
         /*Rei*/
-        colocarNovaPeca('d', 5, new Rei(tabuleiro, Cor.PRETO));
         colocarNovaPeca('e', 8, new Rei(tabuleiro, Cor.BRANCO));
         colocarNovaPeca('e', 1, new Rei(tabuleiro, Cor.PRETO));
 
