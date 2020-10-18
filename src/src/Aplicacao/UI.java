@@ -45,7 +45,7 @@ public class UI {
     }
     private static void imprimirPeca(PecaXadrez peca,int j,int i, boolean background){
         if(background){
-            System.out.print(ANSI_BLUE_BACKGROUND );
+            System.out.print(ANSI_RED_BACKGROUND );
         }
         if(peca == null){
             //linha Impar inicio Preto
