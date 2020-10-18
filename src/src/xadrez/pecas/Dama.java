@@ -1,7 +1,7 @@
 package xadrez.pecas;
-/*
-    Jeferson created on 17/06/2020
-*/
+/**
+ * Created by Jeferson. 17/06/2020
+ */
 
 import tabuleiro.Tabuleiro;
 import xadrez.Cor;

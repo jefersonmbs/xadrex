@@ -1,8 +1,8 @@
 package xadrez;
 
-/*
-    Jeferson created on 17/06/2020
-*/
+/**
+ * Created by Jeferson. 16/06/2020
+ */
 
 import tabuleiro.TabuleiroExeption;
 

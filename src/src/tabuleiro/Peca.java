@@ -1,7 +1,7 @@
 package tabuleiro;
-/*
-    Jeferson created on 16/06/2020
-*/
+/**
+ * Created by Jeferson. 16/06/2020
+ */
 
 public abstract class Peca {
     protected Posicao posicao;

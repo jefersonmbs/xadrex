@@ -1,11 +1,12 @@
 package xadrez;
 
-/*
-    Jeferson created on 17/06/2020
-    Linha da Matrix = 8 - this.linha
-    Coluna da Matrix = this.coluna - 'a'
-    Unicode
-*/
+
+/**
+ * Created by Jeferson. 17/06/2020
+ * Linha da Matrix = 8 - this.linha
+ * Coluna da Matrix = this.coluna - 'a'
+ * Unicode
+ */
 
 import tabuleiro.Posicao;
 

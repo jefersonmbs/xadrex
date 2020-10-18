@@ -1,5 +1,9 @@
 package tabuleiro;
 
+/**
+ * Created by Jeferson. 16/06/2020
+ */
+
 public class Posicao {
     private int linha;
     private int coluna;
@@ -26,7 +30,7 @@ public class Posicao {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return linha + ", " + coluna;
     }
 }

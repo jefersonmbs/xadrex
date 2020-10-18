@@ -1,5 +1,9 @@
 package Aplicacao;
 
+/**
+ * Created by Jeferson. 16/06/2020
+ */
+
 import xadrez.Partida;
 import xadrez.PecaXadrez;
 import xadrez.PosicaoXadrez;
@@ -17,7 +21,7 @@ public class Main {
         Partida partida = new Partida();
 
 
-        while (true){
+        while (true) {
             try {
                 UI.limparTela();
                 UI.imprimirTabuleiro(partida.getPecas());
@@ -31,12 +35,11 @@ public class Main {
 
                 PecaXadrez pecaXadrez = partida.moverPeca(origen, futura);
                 // partida.moverPeca(origen,futura);
-            }catch (XadrezException | InputMismatchException e){
+            } catch (XadrezException | InputMismatchException e) {
                 System.out.println(e.getMessage());
                 sc.nextLine();
             }
         }
-
 
 
     }
