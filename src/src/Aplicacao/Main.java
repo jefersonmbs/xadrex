@@ -29,6 +29,9 @@ public class Main {
                 System.out.print(" digite a posição da peça que deseja mover: ");
                 PosicaoXadrez origen = UI.lerPosicao(sc);
 
+                boolean [][] posiveisMovimentos = partida.possiveisMovimentos(origen);
+                UI.limparTela();
+                UI.imprimirTabuleiro(partida.getPecas(), posiveisMovimentos);
                 System.out.println();
                 System.out.print(" digite a posição da peça que deseja ir: ");
                 PosicaoXadrez futura = UI.lerPosicao(sc);

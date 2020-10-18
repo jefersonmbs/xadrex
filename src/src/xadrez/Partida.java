@@ -80,7 +80,11 @@ public class Partida {
     private void colocarNovaPeca(int coluna, int linha, PecaXadrez peca) {
         tabuleiro.colocarPeca(peca, new PosicaoXadrez((char) coluna, linha).toPosicao());
     }
-
+    public boolean[][] possiveisMovimentos(PosicaoXadrez posicaoXadrez){
+        Posicao posicao = posicaoXadrez.toPosicao();
+        validarPosicaoDeOrigen(posicao);
+        return tabuleiro.peca(posicao).movimentosPosiveis();
+    }
     public PecaXadrez moverPeca(PosicaoXadrez posicaoXadrezOrigen, PosicaoXadrez posicaoXadrezFutura) {
         Posicao origen = posicaoXadrezOrigen.toPosicao();
         Posicao futura = posicaoXadrezFutura.toPosicao();
